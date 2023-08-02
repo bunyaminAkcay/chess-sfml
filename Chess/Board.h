@@ -11,7 +11,7 @@ private:
 	sf::Vector2u dragStartCoords;
 	sf::Vector2f dragDiff;
 	Piece* dragObject;
-	Piece* nullPtr = NULL;
+	
 	Piece* choosenPiece = NULL;
 	std::list<sf::Vector2u> legalMoves = {};
 	sf::Vector2u boardPosition = sf::Vector2u(25, 25);
@@ -28,7 +28,7 @@ public:
 	static enum class Thema { Classic, blackWhite, Purple } Classic;
 	Thema thema = Thema::Purple;
 	Piece* pieces[8][8] = { {nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr }, {nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr } ,{nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr } ,{nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr } ,{nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr } ,{nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr } ,{nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr } ,{nullPtr, nullPtr , nullPtr, nullPtr, nullPtr, nullPtr, nullPtr, nullPtr } };
-	
+	Piece* nullPtr = NULL;
 	Board(sf::RenderWindow* windowPointer);
 	void draw();
 	void reverse();

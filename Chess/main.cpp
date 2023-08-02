@@ -1,6 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include "Board.h"
 #include "Horse.h"
+#include "Rook.h"
+#include "Pawn.h"
+#include "King.h"
+#include "Queen.h"
+#include "Bishop.h"
 
 int main()
 {
@@ -10,6 +15,18 @@ int main()
 
     Piece* p = (Piece*) new Horse(Piece::Color::White);
     board.pieces[2][1] = p;
+    Piece* rook = (Piece*) new Rook(Piece::Color::White, &board);
+    board.pieces[3][3] = rook;
+    Piece* pawn1 = (Piece*) new Pawn(Piece::Color::Black, &board);
+    board.pieces[2][2] = pawn1;
+    Piece* pawn2 = (Piece*) new Pawn(Piece::Color::White, &board);
+    board.pieces[7][6] = pawn2;
+    Piece* king = (Piece*) new King(Piece::Color::White, &board);
+    board.pieces[5][3] = king;
+    Piece* queen = (Piece*) new Queen(Piece::Color::White, &board);
+    board.pieces[4][4] = queen;
+    Piece* bishop = (Piece*) new Bishop(Piece::Color::White, &board);
+    board.pieces[6][6] = bishop;
 
     while (window.isOpen()){
 

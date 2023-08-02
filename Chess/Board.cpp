@@ -127,7 +127,7 @@ sf::Vector2u Board::position2coords(sf::Vector2f position) {
 }
 
 void Board::playPiece(int mouseX, int mouseY) {
-
+	
 	sf::Vector2u targetCoord = position2coords(sf::Vector2f((float)mouseX, (float)mouseY));
 
 	if (targetCoord.x != dragStartCoords.x or targetCoord.y != dragStartCoords.y) {
@@ -138,6 +138,7 @@ void Board::playPiece(int mouseX, int mouseY) {
 		std::list<sf::Vector2u>::iterator it;
 		for (it = legalMoves.begin(); it != legalMoves.end(); ++it) {
 			if ((*it).x == targetCoord.x and (*it).y == targetCoord.y) {
+				pieces[dragStartCoords.x][dragStartCoords.y]->played =true;
 				pieces[targetCoord.x][targetCoord.y] = pieces[dragStartCoords.x][dragStartCoords.y];
 				pieces[dragStartCoords.x][dragStartCoords.y] = nullPtr;
 				//destroy target piece
